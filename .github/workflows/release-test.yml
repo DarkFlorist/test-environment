@@ -6,6 +6,13 @@ on:
       - 'v\d+\.\d+\.\d+'
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Derive Tag Name And Populate version.ts
+        id: derive_tag
+        run: |
+          echo well hello there
   deployment:
     runs-on: ubuntu-latest
     environment: Production
