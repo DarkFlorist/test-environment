@@ -13,6 +13,8 @@ jobs:
         id: derive_tag
         run: |
           echo well hello there
+          TAG=$(basename "${{ github.ref }}")
+          echo dt $TAG
   deployment:
     runs-on: ubuntu-latest
     environment: Production
@@ -21,3 +23,8 @@ jobs:
         uses: actions/checkout@v2.4.2
         with:
           fetch-depth: 0
+      - name: Derive Tag Name And Populate version.ts
+        id: derive_tag2
+        run: |
+          TAG=$(basename "${{ github.ref }}")
+          echo dt2 $TAG
