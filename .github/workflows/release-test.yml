@@ -31,7 +31,7 @@ jobs:
           echo dt2 $TAG
   approve2:
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Production2
     needs: build
     steps:
       - name: Checkout
