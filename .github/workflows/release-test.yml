@@ -64,8 +64,8 @@ jobs:
             })
             console.log(approvals.data)
             // Empty check
-            if (approvals.data.length == 0){
-              core.setFailed(`There are no approvals for this deployment. This is not allowed.`);          
+            if (approvals.data.length < 2){
+              core.setFailed(`There are not 2 distinct approvals for this deployment. This is not allowed.`);          
               return; 
             }
 
