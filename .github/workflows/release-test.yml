@@ -56,7 +56,7 @@ jobs:
             const users = approvals.data.filter(approval => approval.user.type === 'User')
             // Empty check
             if (users.length < 2){
-              core.setFailed(`There are not 2 distinct approvals for this deployment. This is not allowed.`);          
+              core.setFailed(`There are not 2 distinct approvals for this deployment. This is not allowed. Approved Users: ${",".join()}`);
               return; 
             }
 
