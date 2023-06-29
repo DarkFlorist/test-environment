@@ -19,30 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-        with:
-          fetch-depth: 0
-      - name: Derive Tag Name And Populate version.ts
-        id: derive_tag2
-        run: |
-          TAG=$(basename "${{ github.ref }}")
-          echo dt2 $TAG
   approve2:
     runs-on: ubuntu-latest
     environment: Production2
     needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-        with:
-          fetch-depth: 0
-      - name: Derive Tag Name And Populate version.ts
-        id: derive_tag2
-        run: |
-          TAG=$(basename "${{ github.ref }}")
-          echo dt2 $TAG
   confirm:
     runs-on: ubuntu-latest
     needs:
