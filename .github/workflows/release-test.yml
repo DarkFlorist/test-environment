@@ -54,9 +54,10 @@ jobs:
             })
             console.log(approvals.data)
             const users = approvals.data.filter(approval => approval.user.type === 'User')
+            const usernames = Array.from(... new Set(users.map(user => user.user.login)))
             // Empty check
-            if (users.length < 2){
-              core.setFailed(`There are not 2 distinct approvals for this deployment. This is not allowed. Approved Users: ${",".join()}`);
+            if (usernames.length < 2){
+              core.setFailed(`There are not 2 distinct approvals for this deployment. This is not allowed. Approved Users: ${usernames.join(",")}`);
               return; 
             }
 
