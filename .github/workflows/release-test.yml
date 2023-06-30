@@ -54,7 +54,7 @@ jobs:
             })
             console.log(approvals.data)
             const users = approvals.data.filter(approval => approval.user.type === 'User')
-            const usernames = Array.from(... new Set(users.map(user => user.user.login)))
+            const usernames = Array.from(new Set(users.map(user => user.user.login)))
             console.log({usernames,users})
             console.log("ffff")
             // Empty check
